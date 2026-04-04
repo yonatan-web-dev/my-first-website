@@ -1,0 +1,54 @@
+body {
+    background-color: powderblue;
+    font-family: Arial, sans-serif;
+}
+
+/* Main title */
+.title {
+    text-align: center;
+    color: blue;
+    font-size: 35px;
+}
+
+/* Intro paragraph */
+.intro {
+    color: #ff6600;
+    font-size: 16px;
+}
+
+/* Subheading */
+.subheading {
+    font-style: italic;
+    color: hsl(247, 100%, 64%);
+}
+
+/* Link style */
+.link {
+    display: inline-block;
+    margin-top: 10px;
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: red;
+}
+
+/* Image styling */
+.image {
+    width: 300px;
+    margin-top: 15px;
+}
+
+/* Feature heading */
+.feature {
+    color: green;
+    margin-top: 20px;
+}
+
+/* List styling */
+.list {
+    margin-top: 10px;
+    font-size: 18px;
+}
