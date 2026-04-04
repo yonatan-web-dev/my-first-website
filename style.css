@@ -29,6 +29,11 @@ body {
     color: darkblue;
     text-decoration: none;
     font-weight: bold;
+    background-color: transparent;
+}
+.link:visited{
+    color:blueviolet
+
 }
 
 .link:hover {
@@ -51,4 +56,9 @@ body {
 .list {
     margin-top: 10px;
     font-size: 18px;
+}
+.details{
+    color:darkgreen;
+    margin-top:20px;
+    font-family:'courior' 'bold';
 }
