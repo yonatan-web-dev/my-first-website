@@ -1,8 +1,9 @@
 body {
-    background-image: url(myphoyto.jpg);
+ body {
+    background-image: url(myphoto.jpg);
     background-size: cover;
-    background-color: powderblue;
-    font-family: Arial, sans-serif;
+     background-blend-mode: lighten;
+}
 }
 
 /* Main title */
@@ -66,16 +67,16 @@ body {
     font-weight: bold;
 }
 .header{
-    background-color:lightblue ;
+    background-color:hsl(195, 77%, 55%) ;
     padding: 10px;
 }
 .about{
-    background-color: white;
+    background-color: rgba(167, 156, 75, 0.637);
     margin-top: 10px;
 padding: 5px;
 }
 .details-box{
-    background-color: #e6ffe6;
+    background-color: hsl(120, 40%, 63%);
     margin-top: 10px;
     padding: 5px;
 
