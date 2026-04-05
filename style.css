@@ -1,4 +1,6 @@
 body {
+    background-image: url(myphoto.jpg);
+    background-size: cover;
     background-color: powderblue;
     font-family: Arial, sans-serif;
 }
@@ -61,4 +63,8 @@ body {
     color:darkgreen;
     margin-top:20px;
     font-family:'courior' 'bold';
+}
+.image2{
+    width:60px;
+    height: 60px;
 }
