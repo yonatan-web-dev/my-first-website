@@ -53,6 +53,7 @@ body {
 .feature {
     color: green;
     margin-top: 20px;
+    text-align: center;
 }
 
 /* List styling */
@@ -81,15 +82,37 @@ padding: 5px;
     padding: 5px;
 
 }
-.skills{
-    background-color: #f2f2f2;
-    margin-top: 10px;
-padding: 5px;
-}
 .footer{
     background-color: gray;
     margin-top: 5px;
 padding: 10px;
 text-align: center;
 color: blue;
+}
+.container {
+    display: flex;
+    background-color: blueviolet;
+    justify-content: center;
+    padding: 20px;
+}
+
+.nav-list {
+    display: flex;       /* This makes the list horizontal */
+    gap: 20px;          /* Space between the items */
+    list-style: none;   /* Removes the dots */
+    padding: 0;
+}
+
+.nav-list li {
+    background-color: hwb(357 28% 0%);
+    color: white;
+    padding: 10px 20px;
+    
+    /* The Double Line Border */
+    border: 4px double white; 
+    
+    /* Sharp Corners */
+    border-radius: 0; 
+    
+    text-align: center;
 }
