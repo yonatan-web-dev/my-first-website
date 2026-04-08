@@ -1,4 +1,5 @@
 body {
+    background-color:powderblue;
     background-image: url(myphoto.jpg);
     background-size: cover;
     background-blend-mode: lighten;
@@ -51,6 +52,7 @@ body {
 
 /* Content */
 .content {
+    color: rgb(11, 20, 16);
     margin-top: 20px;
 }
 
@@ -67,7 +69,7 @@ body {
 /* Feature */
 .feature {
     text-align: center;
-    color: green;
+    color: rgb(75, 179, 40);
 }
 
 /* Details */
@@ -88,4 +90,31 @@ body {
     padding: 10px;
     text-align: center;
     margin-top: 10px;
+}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white !important;   /* 🔥 force white */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+.navbar a:hover {
+    background-color: red;
 }
