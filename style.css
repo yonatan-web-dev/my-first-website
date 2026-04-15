@@ -3,7 +3,17 @@ body {
     background-image: url(myphoto.jpg);
     background-size: cover;
     background-blend-mode: lighten;
-    font-family: Arial, sans-serif;
+    font-family: 'segoe UI',Arial, sans-serif;
+    line-height: 1.6;
+    color: white;
+}
+h1,h2,p{
+    margin-top: 10px;
+}
+.about,.details-box, .card{
+    border-radius: 10px;
+    background-color: #1e293b;
+    color: white;
 }
 
 /* Header */
@@ -148,7 +158,7 @@ body {
 }
 .card:hover{
      transform: translateY(-10px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 .card h3{
     margin-top: 0;
@@ -156,4 +166,33 @@ body {
 .card p{
     font-size: 14px;
     color: #333;
+}.main {
+    display: flex;
 }
+
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+}
+
+/* ✅ ONE media query (better way) */
+@media (max-width: 768px) {
+
+    .main {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
