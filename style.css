@@ -125,6 +125,7 @@ body {
 .card-container {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -132,6 +133,8 @@ body {
     padding: 15px;
     width: 200px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .card a {
@@ -141,4 +144,16 @@ body {
     background-color: blue;
     color: white;
     padding: 5px 10px;
+    transition: 0.3s;
+}
+.card:hover{
+     transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.card h3{
+    margin-top: 0;
+}
+.card p{
+    font-size: 14px;
+    color: #333;
 }
