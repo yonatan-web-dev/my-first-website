@@ -8,6 +8,36 @@
             font-size: 2rem;
             font-weight: bolder;
             font-style: oblique;
+            text-align: center;
+        }
+        header {
+            display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+
+    color: white !important;   /* 🔥 force white */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+.navbar a:hover {
+    background-color: red
         }
         /* PROJECT SECTION */
 .projects {
@@ -74,6 +104,15 @@
     </head>
 <body style="background-color:powderblue">fix_vscode_v2.reg
 <h1 class="title"> Yonatan Terefe</h1>
+<div class="header">
+    <ul class="navbar">
+        <ui> <a href=#home>home </a></ui>
+        <ui> <a href=#setting>setting </a></ui>
+        <ui> <a href=#about>about </a></ui>
+        <ui> <a href=#help>help </a></ui>
+        <ui> <a href=#contact>contact </a></ui>
+    </ul>
+</div>
 <p>am computer  science student at haramaya univercity and am 2nd year. i came from bahirdar and my dream is to be big website developer and be
     very rich man.
 </p>
