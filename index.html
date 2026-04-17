@@ -66,6 +66,13 @@
 
     </div>
 </div>
+<p id="demo">this is the old text to try the functionality 
+    of text change with javascript </p>
+    <p id="demo">this is the old text to try the functionality 
+    of text change with javascript </p>
+    <button onclick="changeText()">change text</button>
+    <br>
+<button onclick="sayhello()">click me</button>
 
 <!-- CONTENT -->
 <div class="content">
@@ -97,8 +104,14 @@
 <div class="footer">
     <p>Developed by Yonatan</p>
 </div>
-<button onclick="sayhello()">click me</button>
-<script>
+<p id="demo">this is the old text to try the functionality 
+    of text change with javascript </p>
+    <script>
+        function changeText() {
+            document.getElementById("demo").innerHTML ="this is the new text to show how javascript can change the text of an element";
+        }
+    </script>
+   <script>
 function sayhello() {
     alert("Hello Yonatan i am glad to see you here! 🚀");
 }
