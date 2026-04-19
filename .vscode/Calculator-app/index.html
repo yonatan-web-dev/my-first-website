@@ -21,40 +21,42 @@
 <p id="result"></p>
 
 <script>
+
+function getNumbers() {
+    let n1 = Number(document.getElementById("num1").value);
+    let n2 = Number(document.getElementById("num2").value);
+    return [n1, n2];
+}
+
 function addNumbers() {
-    let n1 = document.getElementById("num1").value;
-    let n2 = document.getElementById("num2").value;
-
-    let sum = Number(n1) + Number(n2);
-
-    document.getElementById("result").innerHTML = "Result: " + sum;
+    let [n1, n2] = getNumbers();
+    showResult(n1 + n2);
 }
-function subtractNumbers(){
-     let n1 = document.getElementById("num1").value;
-    let n2 = document.getElementById("num2").value;
 
-    let subtract = Number(n1) - Number(n2);
-    document.getElementById("result").innerHTML = "Result: " + subtract;
+function subtractNumbers() {
+    let [n1, n2] = getNumbers();
+    showResult(n1 - n2);
 }
-function productOfNumpers(){
-     let n1 = document.getElementById("num1").value;
-    let n2 = document.getElementById("num2").value;
 
-    let product = Number(n1) * Number(n2);
-    document.getElementById("result").innerHTML = "Result: " + product;
+function productOfNumbers() {
+    let [n1, n2] = getNumbers();
+    showResult(n1 * n2);
 }
-function dividingNumbers(){
-    
-    let n1 = document.getElementById("num1").value;
-    let n2 = document.getElementById("num2").value;
 
-     if(n2>0){
-        let division = Number(n1) / Number(n2);
-        document.getElementById("result").innerHTML = "Result: " + division;
-     } else {
-        document.getElementById("result").innerHTML = "Error: Division by zero is not allowed.";
-     }
+function dividingNumbers() {
+    let [n1, n2] = getNumbers();
+
+    if (n2 != 0) {
+        showResult(n1 / n2);
+    } else {
+        showResult("Error: Cannot divide by zero ❌");
+    }
 }
+
+function showResult(value) {
+    document.getElementById("result").innerHTML = "Result: " + value;
+}
+
 </script>
 </body>
 </html>
