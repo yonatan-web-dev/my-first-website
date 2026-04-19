@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h2>Simple Calculator</h2>
-
+<div class="calculator">
 <input type="number" id="num1" placeholder="Enter first number">
 <input type="number" id="num2" placeholder="Enter second number">
 
-<br><br>
-<div style="padding:5px; margin:5px;">
+<br>
 <button onclick="addNumbers()">Add</button>
 <button onclick="subtractNumbers()">Subtract</button>
-<button onclick="productOfNumpers()">Multiplication</button>
-<button onclick="dividingNumbers()">division</button>
-</div>
-
+<button onclick="productOfNumbers()">Multiplication</button>
+<button onclick="dividingNumbers()">Division</button>
+<button onclick="clearInputs()">Clear</button>
 <p id="result"></p>
-
+</div>
 <script>
 
 function getNumbers() {
@@ -56,7 +55,10 @@ function dividingNumbers() {
 function showResult(value) {
     document.getElementById("result").innerHTML = "Result: " + value;
 }
+function clearInputs() {
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("result").innerHTML = "";
+}
 
 </script>
-</body>
-</html>
