@@ -55,13 +55,13 @@
         <div class="card">
             <h3>My Website</h3>
             <p>This is my first website project.</p>
-            <a href="#">View</a>
+            <a href="#" onclick="alert('The real project will coming soon'); return false;">View</a>
         </div>
 
         <div class="card">
             <h3>Future Project</h3>
             <p>I will build more projects soon.</p>
-            <a href="#">View</a>
+            <a href="#" onclick="alert('The real project will coming soon!'); return false;">View</a>
         </div>
 
     </div>
@@ -104,29 +104,25 @@
 <div class="footer">
     <p>Developed by Yonatan</p>
 </div>
-<p id="demo">this is the old text to try the functionality 
-    of text change with javascript </p>
+
     <script>
         function changeText() {
             document.getElementById("demo").innerHTML ="This is the new text to show how javascript can change the text of an element";
         }
-    </script>
-    <script>
+    
      function UpgradeGoal() {
         document.getElementById("goal").innerHTML ="Not only web developer i also become a CEO of my own company.";
         let goal= document.getElementById("goal");
         goal.style.color="darkgreen";
         goal.style.fontSize="25px";
-        goal.style.backgroundColor="powederblue";
+        goal.style.backgroundColor="powderblue";
         goal.style.padding="10px";
      }
-</script>
-   <script>
+
 function sayhello() {
     alert("Hello Yonatan i am glad to see you here! 🚀");
 }
-</script>
-<script>
+
     alert("welcome to my website!");
 </script>
 </body>
