@@ -21,8 +21,11 @@
         </ul>
     </div>
 </div>
+<input type="text" id="userName" placeholder="Please enter your name here!">
+<button onclick="WelcomeUser()">Enter</button>
+<p id="WelcomeMsg"></p>
 
-<!-- MAIN GRID -->
+
 <div class="main">
 
     <div class="about">
@@ -106,6 +109,10 @@
 </div>
 
     <script>
+        function WelcomeUser(){
+            let name= document.getElementById("userName").value;
+            document.getElementById("WelcomeMsg").innerHTML ="Welcome, " + name + "!";
+        }
         function changeText() {
             document.getElementById("demo").innerHTML ="This is the new text to show how javascript can change the text of an element";
         }
