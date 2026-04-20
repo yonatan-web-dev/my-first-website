@@ -8,57 +8,58 @@
 
 <h2>Simple Calculator</h2>
 <div class="calculator">
-<input type="number" id="num1" placeholder="Enter first number">
-<input type="number" id="num2" placeholder="Enter second number">
+<input type="number" id="display" readonly>;
+<div class="buttons">
+    <button onclick="press(7)">7</button>
+    <button onclick="press(8)">8</button>
+    <button onclick="press(9)">9</button>
+    <button onclick="press('/')">/</button>
 
-<br>
-<button onclick="addNumbers()">Add</button>
-<button onclick="subtractNumbers()">Subtract</button>
-<button onclick="productOfNumbers()">Multiplication</button>
-<button onclick="dividingNumbers()">Division</button>
-<button onclick="clearInputs()">Clear</button>
-<p id="result"></p>
+
+    <button onclick="press(4)">4</button>
+    <button onclick="press(5)">5</button>
+    <button onclick="press(6)">6</button>
+    <button onclick="press('*')">*</button>
+
+
+    <button onclick="press(1)">1</button>
+    <button onclick="press(2)">2</button>
+    <button onclick="press(3)">3</button>
+    <button onclick="press('-')">-</button>
+
+
+    <button onclick="press(0)">0</button>
+    <button onclick="press('.')">.</button>
+    <button onclick="press('+')">+</button>
+    <button onclick="calculate()">=</button>
+</div>
 </div>
 <script>
-
-function getNumbers() {
-    let n1 = Number(document.getElementById("num1").value);
-    let n2 = Number(document.getElementById("num2").value);
-    return [n1, n2];
+function press(value) {
+    document.getElementById("display").value += value;
 }
 
-function addNumbers() {
-    let [n1, n2] = getNumbers();
-    showResult(n1 + n2);
+function calculate() {
+    let result = document.getElementById("display").value;
+    document.getElementById("display").value = eval(result);
 }
 
-function subtractNumbers() {
-    let [n1, n2] = getNumbers();
-    showResult(n1 - n2);
+function clearDisplay() {
+    document.getElementById("display").value = "";
 }
+document.addEventListener("keydown", function(event) {
+    let key = event.key;
 
-function productOfNumbers() {
-    let [n1, n2] = getNumbers();
-    showResult(n1 * n2);
-}
-
-function dividingNumbers() {
-    let [n1, n2] = getNumbers();
-
-    if (n2 != 0) {
-        showResult(n1 / n2);
-    } else {
-        showResult("Error: Cannot divide by zero ❌");
+    if (!isNaN(key) || "+-*/.".includes(key)) {
+        press(key);
+    } else if (key === "Enter") {
+        calculate();
+    } else if (key === "Backspace") {
+        let display = document.getElementById("display");
+        display.value = display.value.slice(0, -1);
     }
-}
-
-function showResult(value) {
-    document.getElementById("result").innerHTML = "Result: " + value;
-}
-function clearInputs() {
-    document.getElementById("num1").value = "";
-    document.getElementById("num2").value = "";
-    document.getElementById("result").innerHTML = "";
-}
+});
 
 </script>
+</body>
+</html>
