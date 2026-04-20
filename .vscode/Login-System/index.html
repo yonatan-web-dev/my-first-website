@@ -5,28 +5,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>Login</h2>
 <div class="login">
-    <p>Username:</p><input type="text" id="userName">
-    <p>Password:</p><input type="password" id="passWord">
+    <h2>🔐 Welcome Back</h2>
+    
+    <div class="input-group">
+        <p>👤 Username</p>
+        <input type="text" id="userName" placeholder="Enter username" autocomplete="off">
+    </div>
+    
+    <div class="input-group">
+        <p>🔒 Password</p>
+        <input type="password" id="passWord" placeholder="Enter password">
+    </div>
+    
     <button onclick="login()">Login</button>
-    <br><br>
+    
     <p id="message"></p>
+    
 </div>
+
 <script>
     function login() {
-        let username = document.getElementById("userName").value;
+        let username = document.getElementById("userName").value.trim();  // .trim() removes spaces
         let password = document.getElementById("passWord").value;
-        if(username === "Yonatan" && password==="yoni@123") {
-            document.getElementById("message").innerHTML ="Login successfully";
-        } else if(username === "" || password === "") {
-            document.getElementById("message").innerHTML ="please fill all the fields!";
-        }
-        else {
-            document.getElementById("message").innerHTML ="Invalid username or password";
+        let messageElement = document.getElementById("message");
+        
+        // 1. Check for empty fields FIRST (Most important validation)
+        if (username === "" || password === "") {
+            messageElement.innerHTML = "⚠️ Please fill in all fields!";
+            messageElement.className = "warning";  // Apply CSS class
+            return;  // Stop execution
         }
         
+        // 2. Check credentials
+        if (username === "Yonatan" && password === "yoni@123") {
+            messageElement.innerHTML = "✅ Login successful! Redirecting...";
+            messageElement.className = "success";
+            
+            // Bonus: Simulate redirect after 1.5 seconds
+            setTimeout(function() {
+                alert("Welcome back, Yonatan! 🚀");
+            }, 1500);
+            
+        } else {
+            messageElement.innerHTML = "❌ Invalid username or password";
+            messageElement.className = "error";
+        }
     }
+    
+    // BONUS: Press Enter to login
+    document.getElementById("passWord").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            login();
+        }
+    });
 </script>
 </body>
 </html>
