@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.login{
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color:#fff;
+    box-shadow: 0 0 10px rgba(221, 62, 62, 0.3);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+ 
+}
+.login:hover{
+    box-shadow: powderblue 0px 0px 15px;
+}
