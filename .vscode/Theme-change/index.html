@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Theme Switcher | Yonatan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle-container">
+        <button id="themeToggle" onclick="toggleTheme()">
+        🌙
+        </button>
+    </div>
+
+    <!-- Your existing portfolio content -->
+    <div class="header">
+        <h1 class="title">Welcome to my website</h1>
+        <div class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="about">
+            <h2>About Me</h2>
+            <p>I am Jonathan, a computer science student at Haramaya University.</p>
+        </div>
+        <div class="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+function toggleTheme() {
+    // Get the body element
+    let body = document.body;
+    let button = document.getElementById("themeToggle");
+    
+    // Check if dark-mode class exists
+    if (body.className === "dark-mode") {
+        // Switch to Light Mode
+        body.className = "";  // Remove the class
+        button.innerHTML = "🌙 Switch to Dark Mode";
+        
+        // Optional: Save preference
+        localStorage.setItem("theme", "light");
+        
+    } else {
+        // Switch to Dark Mode
+        body.className = "dark-mode";  // ADD the class
+        button.innerHTML = "☀️ Switch to Light Mode";
+        
+        // Optional: Save preference
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+// BONUS: Remember user's preference when they return
+function loadSavedTheme() {
+    let savedTheme = localStorage.getItem("theme");
+    
+    if (savedTheme === "dark") {
+        document.body.className = "dark-mode";
+        document.getElementById("themeToggle").innerHTML = "☀️ Switch to Light Mode";
+    }
+}
+
+// Run when page loads
+window.onload = loadSavedTheme;
+</script>
+</body>
+</html>
