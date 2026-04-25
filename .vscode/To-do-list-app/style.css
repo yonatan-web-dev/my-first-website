@@ -60,3 +60,6 @@ li.completed {
     margin-top: 15px;
     background: red;
 }
+.clear-btn:hover {
+    background: darkred;
+}
