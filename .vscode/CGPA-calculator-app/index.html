@@ -8,6 +8,23 @@
 
     <h1>CGPA Calculator</h1>
 
+    <input type="text" id="courseName" placeholder="Course name">
+    <input type="number" id="creditHour" placeholder="Credit hours" min="1" max="6">
+    <select id="gradeSelect">
+        <option value="">Select Grade</option>
+        <option value="4.00">A</option>
+        <option value="3.50">B+</option>
+        <option value="3.00">B</option>
+        <option value="2.50">C+</option>
+        <option value="2.00">C</option>
+        <option value="1.50">D</option>
+        <option value="0.00">F</option>
+    </select>
+
+    <button onclick="addCourse()">Add Course</button>
+
+    <div id="courseList"></div>
+
     <script src="script.js"></script>
 </body>
 </html>

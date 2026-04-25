@@ -4,3 +4,25 @@ body {
     text-align: center;
     padding-top: 50px;
 }
+
+input, select {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#courseList {
+    margin-top: 20px;
+}
+
+.course-item {
+    background-color: white;
+    padding: 12px;
+    margin: 5px auto;
+    width: 350px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
