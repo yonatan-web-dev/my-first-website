@@ -1,34 +1,52 @@
- function login() {
-        let username = document.getElementById("userName").value.trim();  // .trim() removes spaces
-        let password = document.getElementById("passWord").value;
-        let messageElement = document.getElementById("message");
-        
-        // 1. Check for empty fields FIRST (Most important validation)
-        if (username === "" || password === "") {
-            messageElement.innerHTML = "⚠️ Please fill in all fields!";
-            messageElement.className = "warning";  // Apply CSS class
-            return;  // Stop execution
-        }
-        
-        // 2. Check credentials
-        if (username === "Yonatan" && password === "yoni@123") {
-            messageElement.innerHTML = "✅ Login successful! Redirecting...";
-            messageElement.className = "success";
-            
-            // Bonus: Simulate redirect after 1.5 seconds
-            setTimeout(function() {
-                alert("Welcome back, Yonatan! 🚀");
-            }, 1500);
-            
-        } else {
-            messageElement.innerHTML = "❌ Invalid username or password";
-            messageElement.className = "error";
-        }
+let courses = [];
+
+function addCourse() {
+    let name = document.getElementById("courseName").value;
+    let credit = document.getElementById("creditHour").value;
+    let gradePoint = document.getElementById("gradeSelect").value;
+    let gradeText = document.getElementById("gradeSelect").options[document.getElementById("gradeSelect").selectedIndex].text;
+    
+    let course = {
+        name: name,
+        credit: Number(credit),
+        gradePoint: Number(gradePoint),
+        grade: gradeText
+    };
+    
+    courses.push(course);
+    
+    document.getElementById("courseName").value = "";
+    document.getElementById("creditHour").value = "";
+    document.getElementById("gradeSelect").value = "";
+    
+    displayCourses();
+}
+
+function displayCourses() {
+    let listDiv = document.getElementById("courseList");
+    let html = "";
+    
+    for (let i = 0; i < courses.length; i++) {
+        html = html + '<div class="course-item">' +
+               '<span>' + courses[i].name + ' (' + courses[i].credit + 'hr)</span>' +
+               '<span>' + courses[i].grade + '</span>' +
+               '</div>';
     }
     
-    // BONUS: Press Enter to login
-    document.getElementById("passWord").addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            login();
-        }
-    });
+    listDiv.innerHTML = html;
+}
+
+// ====== NEW FUNCTION ======
+function calculateCGPA() {
+    let totalPoints = 0;
+    let totalCredits = 0;
+    
+    for (let i = 0; i < courses.length; i++) {
+        totalPoints = totalPoints + (courses[i].gradePoint * courses[i].credit);
+        totalCredits = totalCredits + courses[i].credit;
+    }
+    
+    let gpa = totalPoints / totalCredits;
+    
+    document.getElementById("result").innerHTML = "Your CGPA: " + gpa.toFixed(2);
+}
