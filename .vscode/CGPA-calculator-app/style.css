@@ -1,41 +1,90 @@
+/* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====== BASE ====== */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f4f8;
     text-align: center;
     padding-top: 50px;
 }
 
-input, select {
-    padding: 8px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+h1 {
+    color: #1e293b;
+    margin-bottom: 20px;
 }
 
+/* ====== INPUTS ====== */
+input, select {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #3b82f6;
+}
+
+/* ====== BUTTONS ====== */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #3b82f6;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* ====== COURSE LIST ====== */
 #courseList {
     margin-top: 20px;
 }
 
 .course-item {
     background-color: white;
-    padding: 12px;
-    margin: 5px auto;
-    width: 350px;
-    border-radius: 5px;
+    padding: 12px 15px;
+    margin: 8px auto;
+    width: 400px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #3b82f6;
 }
+
+/* ====== DELETE BUTTON ====== */
 .delete-btn {
-    background-color: #ff4444;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 5px 12px;
+    border-radius: 5px;
     font-size: 12px;
 }
 
 .delete-btn:hover {
-    background-color: #cc0000;
+    background-color: #fecaca;
+}
+
+/* ====== RESULT ====== */
+#result {
+    margin-top: 20px;
+    color: #1e293b;
+    font-size: 24px;
 }
