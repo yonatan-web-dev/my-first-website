@@ -9,19 +9,19 @@ function addCourse() {
     let gradePoint = document.getElementById("gradeSelect").value;
     let gradeText = document.getElementById("gradeSelect").options[document.getElementById("gradeSelect").selectedIndex].text;
     
-    // ====== VALIDATION ======
+    // ====== VALIDATION WITH ON-SCREEN MESSAGE ======
     if (name === "") {
-        alert("⚠️ Please enter course name!");
+        showMessage("⚠️ Please enter course name!", "error");
         return;
     }
     
     if (credit === "") {
-        alert("⚠️ Please enter credit hours!");
+        showMessage("⚠️ Please enter credit hours!", "error");
         return;
     }
     
     if (gradePoint === "") {
-        alert("⚠️ Please select a grade!");
+        showMessage("⚠️ Please select a grade!", "error");
         return;
     }
     
@@ -43,6 +43,9 @@ function addCourse() {
     
     // Update display
     displayCourses();
+    
+    // Success message
+    showMessage("✅ Course added successfully!", "success");
 }
 
 // ====== DISPLAY COURSES ======
@@ -64,13 +67,13 @@ function displayCourses() {
 function deleteCourse(index) {
     courses.splice(index, 1);
     displayCourses();
+    showMessage("🗑️ Course deleted!", "success");
 }
 
 // ====== CALCULATE CGPA ======
 function calculateCGPA() {
-    // ====== VALIDATION ======
     if (courses.length === 0) {
-        alert("⚠️ Please add at least one course!");
+        showMessage("⚠️ Please add at least one course!", "error");
         return;
     }
     
@@ -85,4 +88,18 @@ function calculateCGPA() {
     let gpa = totalPoints / totalCredits;
     
     document.getElementById("result").innerHTML = "Your CGPA: " + gpa.toFixed(2);
+    showMessage("🎓 CGPA calculated!", "success");
+}
+
+// ====== SHOW MESSAGE ======
+function showMessage(text, type) {
+    let messageElement = document.getElementById("message");
+    messageElement.innerHTML = text;
+    messageElement.className = type + "-msg";  // "error-msg" or "success-msg"
+    
+    // Clear message after 3 seconds
+    setTimeout(function() {
+        messageElement.innerHTML = "";
+        messageElement.className = "";
+    }, 3000);
 }
