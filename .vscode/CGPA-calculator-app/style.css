@@ -88,3 +88,17 @@ button:hover {
     color: #1e293b;
     font-size: 24px;
 }
+/* ====== MESSAGE ====== */
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.error-msg {
+    color: #ef4444;
+}
+
+.success-msg {
+    color: #10b981;
+}
