@@ -1,3 +1,6 @@
+// ====== STORE HISTORY ======
+let history = [];
+
 // ====== PRESS BUTTON ======
 function press(value) {
     let display = document.getElementById("display");
@@ -9,7 +12,6 @@ function calculate() {
     let display = document.getElementById("display");
     let expression = display.value;
     
-    // Prevent empty calculation
     if (expression === "") {
         return;
     }
@@ -17,18 +19,27 @@ function calculate() {
     try {
         let result = eval(expression);
         
-        // Handle division by zero
         if (result === Infinity || result === -Infinity) {
             display.value = "Error";
             return;
         }
         
-        // Format result
+        let formattedResult;
         if (Number.isInteger(result)) {
-            display.value = result;
+            formattedResult = result;
         } else {
-            display.value = parseFloat(result.toFixed(4));
+            formattedResult = parseFloat(result.toFixed(4));
         }
+        
+        // Save to history
+        let entry = {
+            expression: expression,
+            result: formattedResult
+        };
+        history.push(entry);
+        
+        display.value = formattedResult;
+        displayHistory();
         
     } catch (error) {
         display.value = "Error";
@@ -46,11 +57,35 @@ function backspace() {
     display.value = display.value.slice(0, -1);
 }
 
+// ====== DISPLAY HISTORY ======
+function displayHistory() {
+    let historyList = document.getElementById("historyList");
+    let html = "";
+    
+    if (history.length === 0) {
+        html = '<p class="no-history">No calculations yet</p>';
+    } else {
+        for (let i = history.length - 1; i >= 0; i--) {
+            html = html + '<div class="history-item">' +
+                   '<span class="history-expression">' + history[i].expression + ' =</span>' +
+                   '<span class="history-result">' + history[i].result + '</span>' +
+                   '</div>';
+        }
+    }
+    
+    historyList.innerHTML = html;
+}
+
+// ====== CLEAR HISTORY ======
+function clearHistory() {
+    history = [];
+    displayHistory();
+}
+
 // ====== KEYBOARD SUPPORT ======
 document.addEventListener("keydown", function(event) {
     let key = event.key;
     
-    // Prevent default for calculator keys
     if (!isNaN(key) || "+-*/.%".includes(key)) {
         event.preventDefault();
         press(key);
