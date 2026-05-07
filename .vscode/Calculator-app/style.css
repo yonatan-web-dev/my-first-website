@@ -1,126 +1,62 @@
-/* ====== RESET ====== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ====== HISTORY ====== */
+.history {
+    margin-top: 25px;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 15px;
 }
 
-/* ====== BASE ====== */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+.history-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
+    margin-bottom: 10px;
 }
 
-/* ====== CALCULATOR BOX ====== */
-.calculator {
-    background-color: #ffffff;
-    padding: 30px 25px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    width: 350px;
-}
-
-.calculator h2 {
-    text-align: center;
-    color: #1e293b;
-    margin-bottom: 20px;
-    font-size: 22px;
-}
-
-/* ====== DISPLAY ====== */
-#display {
-    width: 100%;
-    padding: 18px 15px;
-    font-size: 28px;
-    text-align: right;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    background-color: #f8fafc;
-    color: #1e293b;
-    font-weight: bold;
-    outline: none;
-}
-
-#display:focus {
-    border-color: #3b82f6;
-}
-
-/* ====== BUTTON GRID ====== */
-.buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-}
-
-.buttons button {
-    padding: 18px 10px;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    background-color: #f1f5f9;
+.history-header h3 {
+    font-size: 16px;
     color: #1e293b;
 }
 
-.buttons button:hover {
-    background-color: #e2e8f0;
-    transform: scale(0.95);
-}
-
-.buttons button:active {
-    transform: scale(0.90);
-}
-
-/* ====== SPECIAL BUTTONS ====== */
-.operator {
-    background-color: #dbeafe !important;
-    color: #1d4ed8 !important;
-}
-
-.operator:hover {
-    background-color: #bfdbfe !important;
-}
-
-.equals {
-    background-color: #3b82f6 !important;
-    color: white !important;
-}
-
-.equals:hover {
-    background-color: #2563eb !important;
-}
-
-.clear {
-    background-color: #fee2e2 !important;
+.clear-history {
+    background-color: transparent !important;
     color: #ef4444 !important;
-    grid-column: span 2;
+    font-size: 13px !important;
+    padding: 5px 10px !important;
+    border: 1px solid #ef4444 !important;
+    border-radius: 5px;
 }
 
-.clear:hover {
-    background-color: #fecaca !important;
+.clear-history:hover {
+    background-color: #fee2e2 !important;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 400px) {
-    .calculator {
-        width: 95%;
-        padding: 20px;
-    }
-    
-    .buttons button {
-        padding: 15px 8px;
-        font-size: 16px;
-    }
-    
-    #display {
-        font-size: 24px;
-        padding: 15px;
-    }
+#historyList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin: 5px 0;
+    background-color: #f8fafc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.history-expression {
+    color: #64748b;
+}
+
+.history-result {
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.no-history {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+    padding: 10px;
 }
