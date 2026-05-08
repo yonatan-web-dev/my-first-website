@@ -1,53 +1,62 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <title>Calculator | Yonatan</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ====== HISTORY ====== */
+.history {
+    margin-top: 25px;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 15px;
+}
 
-    <div class="calculator">
-        <h2>🔢 Calculator</h2>
-        
-        <input type="text" id="display" readonly placeholder="0">
-        
-        <div class="buttons">
-            <button onclick="press('7')">7</button>
-            <button onclick="press('8')">8</button>
-            <button onclick="press('9')">9</button>
-            <button class="operator" onclick="press('/')">÷</button>
-            
-            <button onclick="press('4')">4</button>
-            <button onclick="press('5')">5</button>
-            <button onclick="press('6')">6</button>
-            <button class="operator" onclick="press('*')">×</button>
-            
-            <button onclick="press('1')">1</button>
-            <button onclick="press('2')">2</button>
-            <button onclick="press('3')">3</button>
-            <button class="operator" onclick="press('-')">−</button>
-            
-            <button onclick="press('0')">0</button>
-            <button onclick="press('.')">.</button>
-            <button class="operator" onclick="press('+')">+</button>
-            <button class="equals" onclick="calculate()">=</button>
-            
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button class="clear" onclick="backspace()">⌫</button>
-        </div>
-        
-        <!-- HISTORY SECTION -->
-        <div class="history">
-            <div class="history-header">
-                <h3>📜 History</h3>
-                <button class="clear-history" onclick="clearHistory()">Clear</button>
-            </div>
-            <div id="historyList">
-                <p class="no-history">No calculations yet</p>
-            </div>
-        </div>
-    </div>
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.history-header h3 {
+    font-size: 16px;
+    color: #1e293b;
+}
+
+.clear-history {
+    background-color: transparent !important;
+    color: #ef4444 !important;
+    font-size: 13px !important;
+    padding: 5px 10px !important;
+    border: 1px solid #ef4444 !important;
+    border-radius: 5px;
+}
+
+.clear-history:hover {
+    background-color: #fee2e2 !important;
+}
+
+#historyList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin: 5px 0;
+    background-color: #f8fafc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.history-expression {
+    color: #64748b;
+}
+
+.history-result {
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.no-history {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+    padding: 10px;
+}
