@@ -1,65 +1,35 @@
-// ====== STORE COURSES ======
-let courses = [];
-
-// ====== ADD COURSE ======
-function addCourse() {
-    let name = document.getElementById("courseName").value;
-    let credit = document.getElementById("creditHour").value;
-    let gradePoint = document.getElementById("gradeSelect").value;
-    let gradeText = document.getElementById("gradeSelect").options[document.getElementById("gradeSelect").selectedIndex].text;
+function login() {
+    // Get values
+    let username = document.getElementById("userName").value.trim();
+    let password = document.getElementById("passWord").value;
+    let messageElement = document.getElementById("message");
     
-    // Create course object
-    let course = {
-        name: name,
-        credit: Number(credit),
-        gradePoint: Number(gradePoint),
-        grade: gradeText
-    };
-    
-    // Add to array
-    courses.push(course);
-    
-    // Clear inputs
-    document.getElementById("courseName").value = "";
-    document.getElementById("creditHour").value = "";
-    document.getElementById("gradeSelect").value = "";
-    
-    // Update display
-    displayCourses();
-}
-
-// ====== DISPLAY COURSES ======
-function displayCourses() {
-    let listDiv = document.getElementById("courseList");
-    let html = "";
-    
-    for (let i = 0; i < courses.length; i++) {
-        html = html + '<div class="course-item">' +
-               '<span>' + courses[i].name + ' (' + courses[i].credit + 'hr) - ' + courses[i].grade + '</span>' +
-               '<button class="delete-btn" onclick="deleteCourse(' + i + ')">Delete</button>' +
-               '</div>';
+    // Check for empty fields FIRST
+    if (username === "" || password === "") {
+        messageElement.innerHTML = "⚠️ Please fill in all fields!";
+        messageElement.className = "warning";
+        return;
     }
     
-    listDiv.innerHTML = html;
-}
-
-// ====== DELETE COURSE ======
-function deleteCourse(index) {
-    courses.splice(index, 1);
-    displayCourses();
-}
-
-// ====== CALCULATE CGPA ======
-function calculateCGPA() {
-    let totalPoints = 0;
-    let totalCredits = 0;
-    
-    for (let i = 0; i < courses.length; i++) {
-        totalPoints = totalPoints + (courses[i].gradePoint * courses[i].credit);
-        totalCredits = totalCredits + courses[i].credit;
+    // Check credentials
+    if (username === "Yonatan" && password === "yoni@123") {
+        messageElement.innerHTML = "✅ Login successful! Redirecting...";
+        messageElement.className = "success";
+        
+        // Simulate redirect after 1.5 seconds
+        setTimeout(function() {
+            alert("Welcome back, Yonatan! 🚀");
+        }, 1500);
+        
+    } else {
+        messageElement.innerHTML = "❌ Invalid username or password";
+        messageElement.className = "error";
     }
-    
-    let gpa = totalPoints / totalCredits;
-    
-    document.getElementById("result").innerHTML = "Your CGPA: " + gpa.toFixed(2);
 }
+
+// Press Enter to login
+document.getElementById("passWord").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        login();
+    }
+});
