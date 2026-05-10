@@ -1,10 +1,13 @@
+// ====== LOGIN FUNCTION ======
 function login() {
-    // Get values
     let username = document.getElementById("userName").value.trim();
     let password = document.getElementById("passWord").value;
     let messageElement = document.getElementById("message");
     
-    // Check for empty fields FIRST
+    // Clear previous message style
+    messageElement.className = "";
+    
+    // Check for empty fields
     if (username === "" || password === "") {
         messageElement.innerHTML = "⚠️ Please fill in all fields!";
         messageElement.className = "warning";
@@ -13,22 +16,16 @@ function login() {
     
     // Check credentials
     if (username === "Yonatan" && password === "yoni@123") {
-        messageElement.innerHTML = "✅ Login successful! Redirecting...";
+        messageElement.innerHTML = "✅ Login successful! Welcome back! 🚀";
         messageElement.className = "success";
-        
-        // Simulate redirect after 1.5 seconds
-        setTimeout(function() {
-            alert("Welcome back, Yonatan! 🚀");
-        }, 1500);
-        
     } else {
-        messageElement.innerHTML = "❌ Invalid username or password";
+        messageElement.innerHTML = "❌ Invalid username or password!";
         messageElement.className = "error";
     }
 }
 
-// Press Enter to login
-document.getElementById("passWord").addEventListener("keypress", function(event) {
+// ====== ENTER KEY TO LOGIN ======
+document.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         login();
     }
