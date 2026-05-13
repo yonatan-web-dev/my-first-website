@@ -7,7 +7,7 @@ function login() {
     // Clear previous message style
     messageElement.className = "";
     
-    // Check for empty fields
+    // Check for empty fields FIRST
     if (username === "" || password === "") {
         messageElement.innerHTML = "⚠️ Please fill in all fields!";
         messageElement.className = "warning";
