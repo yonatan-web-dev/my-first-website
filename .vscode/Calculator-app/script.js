@@ -1,5 +1,6 @@
-// ====== STORE HISTORY ======
+// ====== STORE DATA ======
 let history = [];
+let memory = 0;
 
 // ====== PRESS BUTTON ======
 function press(value) {
@@ -55,6 +56,42 @@ function clearDisplay() {
 function backspace() {
     let display = document.getElementById("display");
     display.value = display.value.slice(0, -1);
+}
+
+// ====== MEMORY FUNCTIONS ======
+function memoryClear() {
+    memory = 0;
+    updateMemoryDisplay();
+}
+
+function memoryRecall() {
+    document.getElementById("display").value = memory;
+}
+
+function memoryAdd() {
+    let display = document.getElementById("display");
+    let currentValue = Number(display.value);
+    
+    if (!isNaN(currentValue) && display.value !== "") {
+        memory = memory + currentValue;
+        updateMemoryDisplay();
+        display.value = "";
+    }
+}
+
+function memorySubtract() {
+    let display = document.getElementById("display");
+    let currentValue = Number(display.value);
+    
+    if (!isNaN(currentValue) && display.value !== "") {
+        memory = memory - currentValue;
+        updateMemoryDisplay();
+        display.value = "";
+    }
+}
+
+function updateMemoryDisplay() {
+    document.getElementById("memoryDisplay").innerHTML = "M: " + memory;
 }
 
 // ====== DISPLAY HISTORY ======
