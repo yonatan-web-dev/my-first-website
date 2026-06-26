@@ -1,112 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Terefe | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <h1 class="title">Welcome to my website</h1>
+    <header class="header">
+        <h1>JONATHAN TEREFE</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#c1">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#c3">Contact</a></li>
-        </ul>
-    </div>
-</div>
-<input type="text" id="userName" placeholder="Please enter your name here!">
-<button onclick="WelcomeUser()">Enter</button>
-<p id="WelcomeMsg"></p>
+    <main class="main">
+        <section id="about">
+            <h2>Professional Profile</h2>
+            <p>Second-year Computer Science student at Haramaya University. Dedicated to developing scalable, efficient web applications and software solutions with a focus on modern development standards.</p>
+        </section>
 
+        <section id="skills">
+            <h2>Technical Competencies</h2>
+            <ul class="skill-list">
+                <li>Algorithms & Data Structures</li>
+                <li>Web Development (HTML5/CSS3/JavaScript)</li>
+                <li>Version Control (Git & GitHub)</li>
+                <li>Database Management</li>
+            </ul>
+        </section>
+    </main>
 
-<div class="main">
+    <footer id="contact" class="footer">
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:worrikuterefe@gmail.com">worrikuterefe@gmail.com</a></p>
+        <p>Telegram: <a href="https://t.me/yoniii_6">@yoniii_6</a></p>
+        <p>Instagram: <a href="https://instagram.com/worzzz_19">@worzzz_19</a></p>
+        <p>Phone: +251 903 963 684 | +251 708 963 684</p>
+    </footer>
 
-    <div class="about">
-        <h2 id="home">About Me</h2>
-        <p class="intro">
-            I am a computer science student at Haramaya University.
-            This is my first website and I am improving it step by step.
-            One day, I will become a top web developer.
-        </p>
-    </div>
-
-    <div class="skills">
-        <h2 id="skills">My Skills</h2>
-        <ul class="nav-list">
-            <li>Algorithms</li>
-            <li>HTML</li>
-            <li>Git & GitHub</li>
-            <li>CSS</li>
-        </ul>
-    </div>
-
-</div>
-
-<!-- PROJECTS -->
-<div class="projects">
-    <h2>My Projects</h2>
-
-    <div class="card-container">
-
-        <div class="card">
-            <h3>My Website</h3>
-            <p>This is my first website project.</p>
-            <a href="#" onclick="alert('The real project will coming soon'); return false;">View</a>
-        </div>
-
-        <div class="card">
-            <h3>Future Project</h3>
-            <p>I will build more projects soon.</p>
-            <a href="#" onclick="alert('The real project will coming soon!'); return false;">View</a>
-        </div>
-
-    </div>
-</div>
-<p id="goal">I know I will become a great web developer.</p>
-<button onclick="UpgradeGoal()">Upgrade goal</button>
-    <p id="demo">This is the old text to try the functionality 
-    of text change with javascript </p>
-    <button onclick="changeText()">change text</button>
-    <br>
-<button onclick="sayhello()">click me</button>
-
-<!-- CONTENT -->
-<div class="content">
-    <p><a href="#c3">Jump to my details</a></p>
-
-    <h2 id="c1">About this website</h2>
-    <p>
-        This website started in April and will keep growing
-        until I become a professional developer.
-    </p>
-
-    <a href="https://www.w3schools.com" target="_blank" class="link">
-        Visit W3School
-    </a>
-</div>
-
-<!-- DETAILS -->
-<div class="details-box">
-    <h2 id="c3">My Details</h2>
-    <ul>
-        <li>Name: Jonathan Terefe</li>
-        <li>2<sup>nd</sup> year Computer Science student</li>
-        <li>Haramaya University</li>
-    </ul>
-    <a href="mailto:yonatanterefe85@gmail.com" class="link">Contact Me</a>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-    <p>Developed by Yonatan</p>
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
