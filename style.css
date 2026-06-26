@@ -1,23 +1,22 @@
-/* Root Variables */
 :root {
-    --bg-color: #09090b;
-    --text-color: #f4f4f5;
-    --accent-color: #3b82f6;
-    --border-color: #27272a;
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8;
+    --border-color: #1e293b;
 }
 
 body {
     margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .header {
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar ul {
@@ -25,58 +24,46 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .navbar a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .main {
-    max-width: 800px;
+    max-width: 700px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
 section {
-    margin-bottom: 40px;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    margin-bottom: 50px;
 }
 
 h2 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.2rem;
     color: var(--accent-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 15px;
 }
 
-button {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 8px 16px;
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-button:hover {
-    background: var(--accent-color);
-    color: white;
-}
-
-input {
-    background: #18181b;
-    border: 1px solid var(--border-color);
-    color: white;
-    padding: 8px;
+.skill-list {
+    list-style: none;
+    padding: 0;
 }
 
 .footer {
     border-top: 1px solid var(--border-color);
-    padding: 40px;
+    padding: 40px 20px;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+}
+
+a {
+    color: var(--accent-color);
 }
